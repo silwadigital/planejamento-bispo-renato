@@ -479,5 +479,626 @@
         </footer>
     </div>
 
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma Estratégico - Bispo Renato</title>
+    <style>
+        :root {
+            --primary-blue: #0f2e52; /* Azul Político Forte */
+            --accent-gold: #c5a059;   /* Dourado Nobre */
+            --bg-light: #f4f6f8;
+            --text-dark: #333;
+            --white: #ffffff;
+            
+            /* Cores dos Pilares */
+            --color-gestor: #0056b3;  /* Azul */
+            --color-bispo: #7b1fa2;   /* Roxo/Espiritual */
+            --color-humano: #2e7d32;  /* Verde/Vida */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bg-gestor { background-color: var(--color-gestor); }
+        .bg-bispo { background-color: var(--color-bispo); }
+        .bg-humano { background-color: var(--color-humano); }
+
+        /* Grid Layout */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid #ccc; /* Default */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card.gestor { border-left-color: var(--color-gestor); }
+        .card.bispo { border-left-color: var(--color-bispo); }
+        .card.humano { border-left-color: var(--color-humano); }
+
+        .day-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-weight: 900;
+            color: #ddd;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .pillar-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hook-box {
+            background-color: #f0f7ff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary-blue);
+        }
+
+        .hook-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .hook-text {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .content-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .cta-box {
+            margin-top: auto;
+            border-top: 1px dashed #ddd;
+            padding-top: 15px;
+        }
+
+        .cta-label {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .cta-text {
+            font-weight: bold;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Plano Tático 30 Dias</h1>
+        <div class="subtitle">Projeto 100k - Bispo Renato Andrade</div>
+        
+        <div class="legend">
+            <div class="badge bg-gestor">🏛️ Gestor (Autoridade)</div>
+            <div class="badge bg-bispo">🙏 Bispo (Fé/Valores)</div>
+            <div class="badge bg-humano">🤝 Humano (Conexão)</div>
+        </div>
+    </header>
+
+    <div class="timeline-grid">
+
+        <div class="card gestor">
+            <span class="day-tag">01</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Disseram que isso aqui não tinha jeito."</div>
+            </div>
+            <p class="content-desc">Mostra o antes (foto/vídeo ruim) e o depois (obra feita) em Taguatinga.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Mora em Taguatinga? Comenta aqui qual rua precisa dessa atenção."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">02</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Sabe o que um Administrador faz às 5 da manhã?"</div>
+            </div>
+            <p class="content-desc">Vlog: Acordando, orando, café e saindo. Energia alta.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Siga o perfil para acompanhar quem acorda cedo por você."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">03</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"A política tentou me endurecer, mas Deus não deixou."</div>
+            </div>
+            <p class="content-desc">Reflexão rápida sobre manter a fé no meio do poder.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Envie esse vídeo para alguém que precisa de força hoje."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">04</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Pare de acreditar em promessa. Acredite em asfalto."</div>
+            </div>
+            <p class="content-desc">Fiscalizando obra, cobrando empreiteiro, mão na massa.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Curta se você prefere resultado do que discurso."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">05</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Pastel ou Coxinha? A dúvida cruel de Taguatinga."</div>
+            </div>
+            <p class="content-desc">Na feira ou lanchonete local, interagindo. Humor leve.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Qual o melhor lanche de Brasília? Me conta aqui."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">06</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"O erro que Brasília não pode mais cometer."</div>
+            </div>
+            <p class="content-desc">Opinião forte sobre problema da cidade (trânsito/saúde). Tom sério.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Concorda comigo? Siga o perfil para mudarmos isso."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">07</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Domingo não é dia de política. É dia de gratidão."</div>
+            </div>
+            <p class="content-desc">Vídeo com família ou na igreja. Apenas valores.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Diga amém se sua família é seu bem maior."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">08</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Isso me deixa indignado!" (Expressão séria)</div>
+            </div>
+            <p class="content-desc">Mostra problema (lixo, buraco) e liga na hora para resolver.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Compartilhe para mostrar que a fiscalização começou."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">09</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">Lendo Haters: "Disseram que não aguento pressão..."</div>
+            </div>
+            <p class="content-desc">Lê crítica maldosa e responde com classe e sorriso.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Siga quem trabalha com amor, não com ódio."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">10</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"O versículo que rege minha gestão."</div>
+            </div>
+            <p class="content-desc">Cita provérbios ou salmos sobre justiça e honestidade.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Salve esse vídeo para ler quando precisar de sabedoria."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">11</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Bastidores: O que a TV não mostra."</div>
+            </div>
+            <p class="content-desc">Time-lapse de reunião tensa ou planejamento. Equipe trabalhando.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Quer ver mais bastidores? Comenta 'EU QUERO'."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">12</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Desafio: Achei alguém mais antigo que Taguatinga!"</div>
+            </div>
+            <p class="content-desc">Conversa com morador idoso/pioneiro. Ouvindo história.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Marque aqui um pioneiro de Brasília que você respeita."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">13</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Brasília x O Resto do Brasil: A verdade."</div>
+            </div>
+            <p class="content-desc">Comparando dados positivos do DF ou defendendo a cidade.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Tem orgulho de morar no DF? Clica no coração."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">14</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Minha oração por você hoje." (Domingo)</div>
+            </div>
+            <p class="content-desc">Oração curta, sincera, olhando no olho da câmera.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Escreva o nome de quem precisa dessa oração."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">15</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"3 coisas que mudaram em Taguatinga e você não viu."</div>
+            </div>
+            <p class="content-desc">Lista rápida (Top 3) de entregas da gestão. Ritmo acelerado.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Qual dessas foi a melhor? 1, 2 ou 3?"</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">16</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"O Bispo também é motorista."</div>
+            </div>
+            <p class="content-desc">Dirigindo no trânsito de Brasília, comentando fluxo, rádio.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Como está o trânsito aí agora? Me conta."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">17</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Política e Religião se discute sim. Sabe por quê?"</div>
+            </div>
+            <p class="content-desc">Argumento sobre como a fé guia a ética na política.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Se você é cristão e patriota, siga este perfil."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">18</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Não é mágica. É orçamento bem aplicado."</div>
+            </div>
+            <p class="content-desc">Explicando de forma simples como uma obra é financiada.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Compartilhe para saberem onde vai o imposto."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">19</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">Trend do momento (adaptada).</div>
+            </div>
+            <p class="content-desc">Áudio viral do TikTok/Reels, adaptado para o gabinete.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">(Legenda pedindo para seguir).</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">20</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Pergunta polêmica: O que falta no seu bairro?"</div>
+            </div>
+            <p class="content-desc">Com microfone na rua perguntando para o povo.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Não tenha medo de falar. Comenta aqui."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">21</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"A base de tudo." (Foto família)</div>
+            </div>
+            <p class="content-desc">Valorização da família tradicional e suporte que dão.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Siga se você também luta pela sua família."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">22</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Você lembra como era isso aqui em 2020?"</div>
+            </div>
+            <p class="content-desc">Comparativo forte de Antes x Depois de uma área famosa.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Siga o perfil para ver mais transformações."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">23</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"5 Fatos que você não sabe sobre o Bispo Renato."</div>
+            </div>
+            <p class="content-desc">Curiosidades (time, comida, hobby). Humanização total.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"E você? Me conta uma curiosidade sua."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">24</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Cristão na política é perseguido?"</div>
+            </div>
+            <p class="content-desc">Desafios de manter princípios em ambiente hostil.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Toque em SEGUIR para fortalecer nossa voz."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">25</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"O futuro de Taguatinga passa por aqui."</div>
+            </div>
+            <p class="content-desc">Mostrando projeto no papel ou tela. Visão de futuro.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Quer que esse projeto saia do papel? Curta muito."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">26</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Sextou... trabalhando!"</div>
+            </div>
+            <p class="content-desc">Agenda cheia na sexta à noite. Contraste com lazer.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Valoriza quem trabalha duro? Manda um 👊."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">27</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Mito ou Verdade sobre a minha gestão."</div>
+            </div>
+            <p class="content-desc">Respondendo dúvidas comuns ou boatos da cidade.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Tem alguma dúvida? Mande no direct."</div>
+            </div>
+        </div>
+
+        <div class="card bispo">
+            <span class="day-tag">28</span>
+            <div class="pillar-icon">🙏</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Agradecer antes de pedir."</div>
+            </div>
+            <p class="content-desc">Reflexão de domingo sobre gratidão pelas conquistas.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Digite GRATIDÃO se teve uma semana abençoada."</div>
+            </div>
+        </div>
+
+        <div class="card humano">
+            <span class="day-tag">29</span>
+            <div class="pillar-icon">🤝</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"Vem tomar um café comigo."</div>
+            </div>
+            <p class="content-desc">Convidando para live ou evento presencial.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Vou responder a todos nos comentários hoje."</div>
+            </div>
+        </div>
+
+        <div class="card gestor">
+            <span class="day-tag">30</span>
+            <div class="pillar-icon">🏛️</div>
+            <div class="hook-box">
+                <div class="hook-title">Gancho Visual/Falado</div>
+                <div class="hook-text">"A missão está só começando." (Manifesto)</div>
+            </div>
+            <p class="content-desc">Compilado dos melhores momentos do mês com música épica.</p>
+            <div class="cta-box">
+                <div class="cta-label">Chamada (CTA)</div>
+                <div class="cta-text">"Quer uma Brasília melhor? Seu lugar é aqui. Siga agora."</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
 </body>
 </html>
